@@ -1,8 +1,9 @@
 "use client"
 import React from 'react'
-
+import { useParams } from 'next/navigation';
 import CommentSection from '@/components/CommentSection'
 import Authore from '@/components/Authore';
+
 const posts = [
   {
     id: '1',
@@ -89,9 +90,9 @@ const posts = [
     image: "/full.jpg"
   }
 ];
-
-export default function Post({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default function Post() {
+  const params = useParams(); // Dynamically fetches route parameters
+  const id = params?.id;
   const post = posts.find((p) => p.id === id);
 
 
