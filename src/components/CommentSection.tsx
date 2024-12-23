@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
+
 import { Input } from "./ui/input";
 
 interface Comment {
@@ -11,10 +12,10 @@ interface Comment {
 }
 
 interface CommentSectionProps {
-  postId: string;
+  postId?: string;
 }
 
-export default function CommentSection({ postId }: CommentSectionProps) {
+export default function CommentSection({ postId: _postId }: CommentSectionProps) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
   const [authorName, setAuthorName] = useState("");
